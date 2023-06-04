@@ -8,7 +8,7 @@ const Post = (props) => {
             <img src="https://starsunfolded.com/wp-content/uploads/2021/01/Pavel-Durov.jpg" alt="ava"/>
             {props.message}
             <div>
-                <span>like</span>
+                <span>like {props.likescount}</span>
             </div>
         </div>
     );
