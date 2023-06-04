@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return (
         <header className='header'>
-            <img src="https://cdn.worldvectorlogo.com/logos/facebook-messenger-3.svg"
+            <img src="https://svgsilh.com/svg/1349676-03a9f4.svg"
                  alt="logo"/>
         </header>
     );

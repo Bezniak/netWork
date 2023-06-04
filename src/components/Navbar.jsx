@@ -19,9 +19,6 @@ const Navbar = () => {
                 <div>
                     Settings
                 </div>
-                <div>
-                    Users
-                </div>
             </nav>
         </>
     );
