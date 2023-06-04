@@ -1,0 +1,24 @@
+.header {
+    grid-area: h;
+    background-color: #3b5998;
+}
+
+.header__container {
+    display: flex;
+    margin-left: 15px;
+    margin-top: 4px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo__text {
+    margin-left: 10px;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+.header img {
+    width: 50px;
+
+}

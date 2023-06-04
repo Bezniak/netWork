@@ -1,0 +1,15 @@
+.content {
+    grid-area: c;
+}
+
+.content img {
+    width: 1000px;
+}
+
+.posts {
+
+}
+
+.item {
+    color: green;
+}
