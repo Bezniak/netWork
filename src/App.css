@@ -3,6 +3,7 @@
     display: grid;
     width: 1200px;
 
+
     grid-template-areas:
     "h h"
     "n c";
@@ -14,7 +15,8 @@
 
 .app-wrapper-content {
     grid-area: c;
-    height: 100vh;
+
+
 }
 
 

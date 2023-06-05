@@ -2,6 +2,8 @@
     grid-area: n;
     padding: 20px;
     background-color: #3b5998;
+    height: 100vh;
+
 }
 
 .item {
