@@ -6,6 +6,12 @@
 .dialogsItems {
     padding: 20px;
 }
+
+.dialogsItems a {
+    text-decoration: none;
+    color: black;
+}
+
 .dialogsItems .active {
     font-weight: bolder;
 }
