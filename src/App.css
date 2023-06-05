@@ -13,7 +13,8 @@
 }
 
 .app-wrapper-content {
-  grid-area: c;
+    grid-area: c;
+    height: 100vh;
 }
 
 
