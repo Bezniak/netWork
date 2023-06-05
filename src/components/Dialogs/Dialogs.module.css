@@ -5,12 +5,20 @@
 
 .dialogsItems {
     padding: 20px;
+
 }
+
 .dialogsItems .active {
     font-weight: bolder;
 }
 
+.dialogsItems a {
+    color: black;
+    text-decoration: none;
+}
+
 .dialog {
+
 
 }
 
