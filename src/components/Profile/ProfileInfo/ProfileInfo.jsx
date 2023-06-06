@@ -1,12 +1,12 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
+import profileImg from '../../../img/profileImg.jpg'
 
 const ProfileInfo = () => {
     return (
         <div>
             <div>
-                <img src="https://www.bestattravel.co.uk/the-edit/wp-content/uploads/2021/02/New-York-Landmarks.jpg"
-                     alt="main"/>
+                <img src={profileImg} alt="main photo"/>
             </div>
             <div className={s.descriptionBlock}>
                 ava + description
