@@ -5,3 +5,8 @@
 .posts {
     margin-top: 10px;
 }
+
+.postsItems {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+}
