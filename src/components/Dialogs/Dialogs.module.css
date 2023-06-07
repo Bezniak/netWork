@@ -43,3 +43,8 @@
 .message {
 
 }
+
+.messagesItems {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+}
