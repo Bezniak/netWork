@@ -3,8 +3,10 @@ import s from '../Dialogs.module.css';
 
 const Message = (props) => {
     return (
-        <div className={s.message}>{props.message}</div>
-    )
-}
+        <div className={s.messageText}>
+            {props.message}
+        </div>
+    );
+};
 
 export default Message;

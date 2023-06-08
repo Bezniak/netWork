@@ -1,7 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY'
+const SEND_MESSAGE = 'SEND_MESSAGE'
 
 
 let store = {
@@ -19,42 +19,42 @@ let store = {
             dialogs: [
                 {
                     id: 1,
-                    name: 'Ivan',
-                    imgAva: 'https://purepng.com/public/uploads/large/businessman-uq0.png',
+                    name: 'Jon',
+                    photo: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80'
                 },
                 {
                     id: 2,
-                    name: 'Brad',
-                    imgAva: 'https://media1.popsugar-assets.com/files/thumbor/4UYUg9UKWqqhaFfElFDU9bKMRgQ/356x1145:1857x2646/fit-in/500x500/filters:format_auto-!!-:strip_icc-!!-/2019/09/04/970/n/1922398/cc3fa7b15d70381d55bd82.88203803_/i/Brad-Pitt.jpg',
+                    name: 'Barack',
+                    photo: 'https://i0.wp.com/www.pd.co.ke/wp-content/uploads/2023/05/images-1-23-1.jpeg'
                 },
                 {
                     id: 3,
-                    name: 'Gaga',
-                    imgAva: 'https://media1.popsugar-assets.com/files/thumbor/nf8o4Bk0rix4ozPrPQjL9Bd2dQc/fit-in/500x500/filters:format_auto-!!-:strip_icc-!!-/2018/07/16/921/n/1922398/1669af075b4d08e36a7e01.55365943_/i/Lady-Gaga.jpg',
+                    name: 'Sara',
+                    photo: 'https://drscdn.500px.org/photo/107895083/m%3D900/v2?sig=db6ce39408eadcfa6646323414a80f7302890a8055c3254f5a4d6126d6635461'
                 },
                 {
                     id: 4,
-                    name: 'Jon',
-                    imgAva: 'https://media1.popsugar-assets.com/files/thumbor/yeuVvYJYc1ZRlG1ueNCE5_OKYSI/342x96:1561x1315/fit-in/500x500/filters:format_auto-!!-:strip_icc-!!-/2020/03/30/864/n/1922398/a621184f5e824c3f1ccfc6.35629064_/i/Jack-Black.jpg',
+                    name: 'Christina',
+                    photo: 'https://global.1.jccmi.edu/wp-content/uploads/sites/18/2022/05/Executive-Assistant.jpg'
                 },
                 {
                     id: 5,
-                    name: 'Anne',
-                    imgAva: 'https://media1.popsugar-assets.com/files/thumbor/JMhRMtVlDfqCoakr4F5pGgofhiY/fit-in/500x500/filters:format_auto-!!-:strip_icc-!!-/2018/07/13/982/n/1922398/76c8d0aa5b49291da499c5.78417503_/i/Anne-Hathaway.jpg',
+                    name: 'Alex',
+                    photo: 'https://iso.500px.com/wp-content/uploads/2019/02/500px_blog_licensing_trends_popular_cameras-1500x1000.jpg'
                 },
                 {
                     id: 6,
-                    name: 'Cristiano',
-                    imgAva: 'https://cdn.justjared.com/wp-content/uploads/headlines/2023/03/twitter-most-06.jpg',
+                    name: 'Gretchen',
+                    photo: 'https://i.pinimg.com/originals/cd/33/5b/cd335b441578f459fa504ffbf6c212f3.jpg'
                 },
             ],
             messages: [
-                {id: 1, message: 'Hi!'},
-                {id: 2, message: 'I would like to visit Italy'},
-                {id: 3, message: 'I am going to NYC'},
-                {id: 4, message: 'Learn React right now!!!'},
+                {id: 1, message: 'Hello!'},
+                {id: 2, message: 'How are you?'},
+                {id: 3, message: 'Tell me something about yourself'},
+                {id: 4, message: 'When are you going on vocation?'},
             ],
-            newMessageText: '',
+            newMessageBody: '',
         },
         siteBar: {
             friends: [
@@ -105,30 +105,24 @@ let store = {
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
-
-
-        } else if (action.type === SEND_MESSAGE) {
-            let newMessage = {
-                id: 5,
-                message: this._state.dialogsPage.newMessageText,
-            }
-            this._state.dialogsPage.messages.push(newMessage);
-            this._state.dialogsPage.newMessageText = '';
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.body;
             this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-            this._state.dialogsPage.newMessageText = action.messageText;
+        } else if (action.type === SEND_MESSAGE) {
+            let body = this._state.dialogsPage.newMessageBody;
+            this._state.dialogsPage.newMessageBody = '';
+            this._state.dialogsPage.messages.push({id: 6, message: body});
             this._callSubscriber(this._state);
         }
     }
 }
 
 export const addPostActionCreator = () => ({type: ADD_POST})
-
 export const onPostActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
 
-export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
+export const sendMessageCreator = () => ({type: SEND_MESSAGE})
+export const updateNewMessageBodyCreator = (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
 
-export const onMessageChangeActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, messageText: text})
 
 window.store = store;
 
