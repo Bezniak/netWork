@@ -1,0 +1,25 @@
+.friendBlockItems {
+    display: inline-flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.friendBlock {
+    text-decoration: none;
+    color: #2a5885;
+    font-weight: 700;
+    margin: 15px;
+}
+
+.friendBlock img {
+    width: 160px;
+    height: 160px;
+
+}
+
+.friendBlock a {
+
+
+}

@@ -1,18 +1,13 @@
-.friendBlock {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.friendBlock img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-}
-
-.friendBlock a {
-    text-decoration: none;
-    color: black;
+.searchItems {
+    display: grid;
+    grid-template-columns: 15fr 1fr;
 
 }
+
+.searchTextarea {
+}
+
+.searchButtonImg {
+    width: 20px;
+}
+
