@@ -6,12 +6,13 @@ let store = {
     _state: {
         profilePage: {
             posts: [
-                {id: 1, message: 'Hi, how are you?', likesCount: 33},
-                {id: 2, message: 'It is my first post!', likesCount: 355},
-                {id: 3, message: 'I am going to NYC!!!', likesCount: 876},
-                {id: 4, message: 'I wanna visit Australia!', likesCount: 3565},
+                {id: 1, message: 'Hi, how are you?', likesCount: 33, likeState: false},
+                {id: 2, message: 'It is my first post!', likesCount: 355, likeState: false},
+                {id: 3, message: 'I am going to NYC!!!', likesCount: 876, likeState: false},
+                {id: 4, message: 'I wanna visit Australia!', likesCount: 3565, likeState: false},
             ],
             newPostText: '',
+
         },
         dialogsPage: {
             dialogs: [
@@ -54,7 +55,7 @@ let store = {
             ],
             newMessageBody: '',
         },
-        siteBar: {
+        sidebar: {
             friends: [
                 {
                     id: 1,
@@ -121,11 +122,9 @@ let store = {
     },
 
     dispatch(action) {
-
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
-        this._state.siteBar = sidebarReducer(this._state.siteBar, action);
-
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
         this._callSubscriber(this._state)
     }
 }

@@ -6,16 +6,15 @@ import {addPostActionCreator, onPostActionCreator} from "../../../redux/profile-
 
 const MyPosts = (props) => {
 
-    let postsElement = props.posts.map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount}/>)
-
-    let newPostElement = React.createRef();
+    let postsElement = props.posts.map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount}
+                                                  likeState={p.likeState}/>)
 
     let addPost = () => {
         props.dispatch(addPostActionCreator());
     }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
+    let onPostChange = (e) => {
+        let text = e.target.value;
         props.dispatch(onPostActionCreator(text));
 
     }
@@ -24,8 +23,7 @@ const MyPosts = (props) => {
         <div className={s.postsBlock}>
             <h3>My post</h3>
             <div className={s.postsItems}>
-                    <textarea ref={newPostElement}
-                              placeholder='Say something'
+                    <textarea placeholder='Say something'
                               onChange={onPostChange}
                               value={props.newPostText}
                     />
