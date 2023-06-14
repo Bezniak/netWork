@@ -1,19 +1,17 @@
 import React from 'react';
-import Friend from "./Friend/Friend";
-import search from '../../img/searchImage.svg'
-import s from './Friends.module.css';
 import Friends from "./Friends";
+import {connect} from "react-redux";
 
-const FriendsContainer = (props) => {
 
-    let state = props.store.getState();
 
-    return (
-        <div>
-            <Friends  sidebar={state.sidebar}/>
-        </div>
+const mapStateToProps = (state) => {
+    return {
+        sidebar: state.sidebar,
+    }
+}
 
-    );
-};
+
+
+const FriendsContainer = connect(mapStateToProps)(Friends);
 
 export default FriendsContainer;
