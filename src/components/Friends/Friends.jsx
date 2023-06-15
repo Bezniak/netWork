@@ -17,7 +17,7 @@ const Friends = (props) => {
                 <input  type="search"
                         placeholder="Search"
                 />
-                <button><img src={searchImage} alt="Search image" className={s.searchButtonImg}/></button>
+                <button className={s.btn}><img src={searchImage} alt="Search image" className={s.searchButtonImg}/></button>
             </div>
 
             {friendElements}

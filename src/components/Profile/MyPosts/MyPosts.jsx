@@ -26,7 +26,7 @@ const MyPosts = (props) => {
                               onChange={onPostChange}
                               value={props.newPostText}
                     />
-                <button onClick={onAddPost}>Add post</button>
+                <button className={s.btn} onClick={onAddPost}>Add post</button>
             </div>
             <div className={s.posts}>
                 {postsElement}
