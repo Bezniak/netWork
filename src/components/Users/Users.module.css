@@ -1,5 +1,5 @@
 .btn {
-    max-width: 200px;
+    width: 80px;
     max-height: 50px;
     padding: 5px 15px;
     margin-top: 5px;
@@ -10,7 +10,7 @@
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
-    background-color: #3b5998;
+    background-color: #2A5885;
     transition: background-color .2s ease;
     cursor: pointer;
     outline: 0;
@@ -18,51 +18,39 @@
 }
 
 .btn:hover {
-    background-color: #3b5998;
+    background-color: #2A5885;
     color: black;
 }
 
-.userWrapper {
-    max-height: 140px;
-    margin: 15px 0 20px 15px;
-    display: flex;
-}
 
-.imageContent {
-    margin-right: 15px;
-    display: flex;
-    flex-direction: column;
+
+.userWrapper {
+    width: 200px;
+    display: inline-flex;
+    margin: 20px;
     justify-content: center;
     align-items: center;
-
-
 }
 
-.descriptionContent {
-    padding: 10px 15px;
-    width: 100%;
-    border: 1px solid #3b5998;
+.userPhoto {
+    width: 200px;
+}
+
+.userNameButtonItems {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.nameInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.userNameLink {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #2A5885;
+    text-overflow: ellipsis;
 }
 
-.locationInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.userName {
+    margin: 0 5px;
 }
 
-
-.photo {
-    width: 100px;
-    height: 100px;
-    border: 2px solid #3b5998;
-    border-radius: 50px;
-    box-shadow: 3px 3px 3px #3b5998;
-}
