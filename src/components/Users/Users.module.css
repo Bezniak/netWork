@@ -1,7 +1,7 @@
 .btn {
     width: 80px;
     max-height: 50px;
-    padding: 5px 15px;
+    padding: 5px 5px;
     margin-top: 5px;
     display: inline-flex;
     align-items: center;
@@ -27,7 +27,7 @@
 .userWrapper {
     width: 200px;
     display: inline-flex;
-    margin: 20px;
+    margin: 10px;
     justify-content: center;
     align-items: center;
 }
@@ -52,5 +52,9 @@
 
 .userName {
     margin: 0 5px;
+}
+
+.selectedPage {
+    font-weight: bold;
 }
 
