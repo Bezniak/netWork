@@ -3,7 +3,13 @@
     background-color: #3b5998;
 }
 
-.header__container {
+.headerItems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerLogo {
     display: flex;
     margin-left: 15px;
     margin-top: 4px;
@@ -18,7 +24,15 @@
 
 }
 
-.header img {
+.headerImage {
     width: 50px;
+}
 
+.loginBlock {
+    margin-right: 20px;
+}
+
+.loginBlock a {
+    color: white;
+    text-decoration: none;
 }
