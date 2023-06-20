@@ -28,14 +28,14 @@ const Users = (props) => {
             {
                 props.users.map(u => <div className={s.userWrapper} key={u.id}>
                     <div className={s.userPhoto}>
-                        <NavLink to={'/users/' + u.id}>
+                        <NavLink to={'/profile/' + u.id}>
                             <img className={s.userPhoto}
                                  src={u.photos.small != null ? u.photos.small : avaPhoto1}
                                  alt="photo ava"/>
                         </NavLink>
                         <p>{u.status != null ? u.status : 'no status'}</p>
                         <div className={s.userNameButtonItems}>
-                            <NavLink className={s.userNameLink} to={'/users/' + u.id}>
+                            <NavLink className={s.userNameLink} to={'/profile/' + u.id}>
                                 <p className={s.userName}>{u.name}</p>
                             </NavLink>
                             <div>

@@ -6,8 +6,8 @@ import Preloader from "../common/Preloader/Preloader";
 import {
     follow,
     setCurrentPage,
-    setUsers,
     setTotalUsersTotalCount,
+    setUsers,
     toggleIsFetching,
     unfollow
 } from "../../redux/users-reducer";
@@ -67,31 +67,6 @@ const mapStateToProps = (state) => {
         isFetching: state.usersPage.isFetching,
     }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userId) => {
-//             dispatch(followAC(userId));
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unfollowAC(userId));
-//         },
-//         setUsers: (users) => {
-//             dispatch(setUsersAC(users));
-//         },
-//         setCurrentPage: (pageNumber) => {
-//             dispatch(setCurrentPageAC(pageNumber));
-//         },
-//         setTotalUserCount: (totalCount) => {
-//             dispatch(setUsersTotalCountAC(totalCount));
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetchingAC(isFetching));
-//         },
-//
-//     }
-// }
-
 
 export default connect(mapStateToProps, {
     follow,
