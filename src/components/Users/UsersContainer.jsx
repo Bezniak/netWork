@@ -1,6 +1,5 @@
 import React from "react";
 import {connect} from "react-redux";
-import axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
 import {
@@ -11,6 +10,7 @@ import {
     toggleIsFetching,
     unfollow
 } from "../../redux/users-reducer";
+import {usersAPI} from "../../api/api";
 
 
 class UsersContainer extends React.Component {
@@ -20,34 +20,21 @@ class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,
-            {
-                withCredentials: true,
-                headers: {
-                    'API-KEY': "11c88bea-a40a-43b8-8dc4-2a87fff1cf34",
-                }
-            })
-            .then(response => {
+        usersAPI.getUsers(this.props.currentPage, this.props.pageSize)
+            .then(data => {
                 this.props.toggleIsFetching(false);
-                this.props.setUsers(response.data.items)
-                this.props.setTotalUsersTotalCount(response.data.totalCount)
+                this.props.setUsers(data.items)
+                this.props.setTotalUsersTotalCount(data.totalCount)
             })
     }
 
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`,
-            {
-                withCredentials: true,
-                headers: {
-                    'API-KEY': "11c88bea-a40a-43b8-8dc4-2a87fff1cf34",
-                }
-            }
-        )
-            .then(response => {
+        usersAPI.getUsers(pageNumber, this.props.pageSize)
+            .then(data => {
                 this.props.toggleIsFetching(false);
-                this.props.setUsers(response.data.items)
+                this.props.setUsers(data.items)
             })
     }
 
