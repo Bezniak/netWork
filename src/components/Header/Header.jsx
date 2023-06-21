@@ -1,9 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import s from './Header.module.css';
 import {NavLink} from "react-router-dom";
 import logo from "../../img/logo.png";
-import axios from "axios";
-import {setUserData} from "../../redux/auth-reducer";
+import avaPhoto1 from "../../img/avaPhoto1.png";
 
 const Header = (props) => {
     return (
@@ -17,9 +16,9 @@ const Header = (props) => {
                     <h2 className={s.logoText}>network</h2>
                 </div>
 
-
                 <div className={s.loginBlock}>
-                    {props.isAuth ? props.email : <NavLink to='/login'>Login</NavLink>}
+                    {props.isAuth ? props.email : <NavLink to={"login"}>Login</NavLink>}
+
                 </div>
             </div>
 
