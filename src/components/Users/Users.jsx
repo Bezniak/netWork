@@ -2,8 +2,6 @@ import React from "react";
 import s from "./Users.module.css";
 import {NavLink} from "react-router-dom";
 import avaPhoto1 from "../../img/avaPhoto1.png";
-import axios from "axios";
-import {usersAPI} from "../../api/api";
 
 const Users = (props) => {
 
@@ -43,23 +41,13 @@ const Users = (props) => {
                             </NavLink>
                             <div>
                                 {u.followed
-                                    ? <button className={s.btn} onClick={() => {
-                                        usersAPI.unfollowUser(u.id)
-                                            .then(data => {
-                                                if (data.resultCode === 0) {
-                                                    props.unfollow(u.id)
-                                                }
-                                            })
-
+                                    ? <button disabled={props.followingInProgress.some(id => id === u.id)}
+                                              className={s.btn} onClick={() => {
+                                        props.unfollow(u.id)
                                     }}>Unfollow</button>
-                                    : <button className={s.btn} onClick={() => {
-                                        usersAPI.followUser(u.id)
-                                            .then(data => {
-                                                if (data.resultCode === 0) {
-                                                    props.follow(u.id)
-                                                }
-                                            })
-
+                                    : <button disabled={props.followingInProgress.some(id => id === u.id)}
+                                              className={s.btn} onClick={() => {
+                                        props.follow(u.id)
                                     }}>Follow</button>
                                 }
                             </div>
