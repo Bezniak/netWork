@@ -23,8 +23,11 @@ class ProfileContainer extends React.Component {
     render() {
         return (
             <div className={s.content}>
-                <Profile {...this.props} profile={this.props.profile} status={this.props.status}
-                         updateStatus={this.props.updateStatus}/>
+                <Profile {...this.props}
+                         profile={this.props.profile}
+                         status={this.props.status}
+                         updateStatus={this.props.updateStatus}
+                />
             </div>
         )
     }
@@ -34,6 +37,9 @@ class ProfileContainer extends React.Component {
 const mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
+    authorizedUserId: state.auth.userId,
+    isAuth: state.auth.isAuth,
+
 })
 
 export default compose(
