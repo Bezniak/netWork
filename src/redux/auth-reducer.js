@@ -32,11 +32,11 @@ export const setAuthUserData = (userId, email, login, isAuth) => ({type: SET_USE
 
 export const getAuthUserData = () => {
     return (dispatch) => {
-        authAPI.me()
+        return authAPI.me()
             .then(response => {
                 if (response.data.resultCode === 0) {
-                    const {email, id, login} = response.data.data;
-                    dispatch(setAuthUserData(email, id, login, true));
+                    const {id, email, login} = response.data.data;
+                    dispatch(setAuthUserData(id, email, login, true));
                 }
             })
     }
